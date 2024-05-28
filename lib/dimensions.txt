@@ -1,0 +1,14 @@
+When designing mobile applications, it's important to account for the range of screen sizes within each category. Here are the typical ranges in dp (density-independent pixels) for small, medium, and large screens:
+
+Small Screens
+- Width: 320 dp to 360 dp
+- Height: 480 dp to 640 dp
+
+Medium Screens
+- Width: 360 dp to 411 dp
+- Height: 640 dp to 731 dp
+
+Large Screens
+- Width: 411 dp to 480 dp
+- Height: 731 dp to 960 dp
+
