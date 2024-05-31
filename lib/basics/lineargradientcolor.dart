@@ -13,8 +13,12 @@ class LinearGradientColor extends StatelessWidget {
               Color(0xff6f89f1),
               Color(0xff764ba2)
             ],
-            begin: FractionalOffset(0, 1),
-            end:  FractionalOffset(1,0),
+            stops: [0.0, 0.6],
+            // begin: FractionalOffset(0, 1),
+            // end:  FractionalOffset(1,0),
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter
+
           ),
 
           // gradient:RadialGradient(

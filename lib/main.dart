@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_basics/admin/adminDashboard.dart';
 import 'package:flutter_basics/admin/dashboard_1.dart';
+import 'package:flutter_basics/basics/CarouseSlider/carouselDesign.dart';
 import 'package:flutter_basics/basics/CarouseSlider/carouselSlider.dart';
 import 'package:flutter_basics/basics/Design/splitting_appinto_widgets.dart';
 import 'package:flutter_basics/basics/Indicator/circularIndicator.dart';
@@ -91,7 +92,7 @@ class HomePage extends StatelessWidget {
 //===================================================
 
         // body: CustomAppBar_Widget()
-        body: Center(child: AdminDashboard()) ,
+        body: Center(child: CarouselDesign()) ,
         // Custom_Button(btnName: "Play", bgColor: Colors.amber, icon: Icon(Icons.play_arrow), )
 
       //     OutlinedButton(
