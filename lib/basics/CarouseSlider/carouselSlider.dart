@@ -1,6 +1,8 @@
 import 'dart:async';
+import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_basics/basics/CarouseSlider/carouselSlider_Image.dart';
 
 class CarouseSlider extends StatefulWidget {
@@ -30,7 +32,7 @@ class _CarouseSliderState extends State<CarouseSlider> {
         currentPage = 0;
       }
       _pageController.animateToPage(currentPage,
-          duration: Duration(milliseconds: 1500), curve: Curves.easeIn);
+          duration: Duration(milliseconds: 1500), curve: Curves.easeInOut);
     });
   }
 
@@ -77,64 +79,137 @@ class _CarouseSliderState extends State<CarouseSlider> {
     var eventDescription = selectedIndex > eventDetails.length - 1
         ? "Null"
         : eventDetails[selectedIndex]["eventDescription"]!;
+    var eventLink = selectedIndex > eventDetails.length - 1
+        ? "Null"
+        : eventDetails[selectedIndex]["eventLink"]!;
 
 //================= Show POPUP function =====================
-    void showPOPUP() {
+    void showPOPUP_1() {
       showDialog(
         context: context,
         builder: (context) {
           return Dialog(
-            child: Container(
-              width: double.infinity,
-              height: double.infinity,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    // width: double.infinity,
-                    height: 100,
-                    decoration: BoxDecoration(
-                        color: Colors.green,
-                        borderRadius: BorderRadius.only(
-                            topRight: Radius.circular(11),
-                            topLeft: Radius.circular(11))),
-                  ),
-                  AlertDialog(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(
-                          bottomRight: Radius.circular(11),
-                          bottomLeft: Radius.circular(11)),
-                    ),
-                    title: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          eventDateAndTime,
-                          style: TextStyle(fontSize: 16),
-                        ),
-                        Text(
-                          eventLocation,
-                          style: TextStyle(fontSize: 16),
-                        ),
-                        Text(eventTitle),
-                      ],
-                    ),
-                    content: Text(
-                      eventDescription,
-                      style: TextStyle(fontSize: 17),
-                    ),
-                    actions: [
-                      TextButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          child: Text("Close"))
-                    ],
-                    insetPadding: EdgeInsets.only(top: 0, left: 20, right: 20),
-                  ),
-                ],
+            insetPadding: EdgeInsets.all(0),
+            backgroundColor: Colors.transparent,
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                maxHeight: double.infinity,
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  width: double.infinity,
+                  color: Colors.green,
+                  child: Text(eventDescription),
+                ),
               ),
             ),
+          );
+        },
+      );
+    }
+
+    void showPOPUP() {
+      showDialog(
+        barrierColor: Color(0x88000000),
+        barrierDismissible: true,
+        context: context,
+        builder: (context) {
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // Container(
+              //   // width: double.infinity,
+              //   height: 100,
+              //   decoration: BoxDecoration(
+              //       color: Colors.green,
+              //       borderRadius: BorderRadius.only(
+              //           topRight: Radius.circular(11),
+              //           topLeft: Radius.circular(11))),
+              // ),
+              BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 6, sigmaY: 6),
+                child: AlertDialog(
+                  titlePadding: EdgeInsets.all(0),
+                  contentPadding:
+                      EdgeInsets.only(top: 0, bottom: 8, left: 20, right: 20),
+                  shape: RoundedRectangleBorder(
+                      // borderRadius: BorderRadius.only(
+                      //     bottomRight: Radius.circular(11),
+                      //     bottomLeft: Radius.circular(11)
+                      // ),
+                      borderRadius: BorderRadius.all(Radius.circular(11))),
+                  title: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.only(
+                          bottomRight: Radius.circular(0),
+                          bottomLeft: Radius.circular(0),
+                          topLeft: Radius.circular(11),
+                          topRight: Radius.circular(11),
+                        ),
+                        child: Container(
+                          // width: double.infinity,
+                          height: 111,
+                          // decoration: BoxDecoration(
+                          //     color: Colors.red,
+                          //     borderRadius: BorderRadius.only(
+                          //         topRight: Radius.circular(11),
+                          //         topLeft: Radius.circular(11))),
+                          child: Expanded(
+                            child: AspectRatio(
+                              aspectRatio: 9 / 2,
+                              child: Image.asset(
+                                images[selectedIndex],
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            left: 20, right: 20, top: 11, bottom: 8),
+                        child: Container(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                eventDateAndTime,
+                                style: TextStyle(fontSize: 16),
+                              ),
+                              Text(
+                                eventLocation,
+                                style: TextStyle(fontSize: 16),
+                              ),
+                              Text(eventTitle),
+                            ],
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                  content: Text(
+                    eventDescription,
+                    style: TextStyle(fontSize: 17),
+                  ),
+                  actions: [
+                    TextButton(
+                        onPressed: () {
+                          print("$eventLink clicked...");
+                        },
+                        child: Text("Register")),
+                    TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text("Close"))
+                  ],
+                  insetPadding: EdgeInsets.only(top: 0, left: 20, right: 20),
+                ),
+              ),
+            ],
           );
         },
       );
@@ -150,6 +225,7 @@ class _CarouseSliderState extends State<CarouseSlider> {
           // },
           onTap: () {
             showPOPUP();
+            // showPOPUP_1();
           },
           onPanDown: (details) {
             carouselTimer?.cancel();
