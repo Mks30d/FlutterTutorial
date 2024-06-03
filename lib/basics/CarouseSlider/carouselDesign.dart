@@ -40,8 +40,8 @@ class _CarouselDesignState extends State<CarouselDesign> {
                           colors: [
                             // Color(0xff24e02d),
                             // Colors.black,
-                            Color(0xff000000),
-                            Color(0xffffff),
+                            Color(0xc7000000),
+                            Color(0x0),
                           ],
                           stops: [
                             0.0,
@@ -79,6 +79,7 @@ class _CarouselDesignState extends State<CarouselDesign> {
                 ]),
               ),
             ),
+
             SizedBox(
               height: 20,
             ),
