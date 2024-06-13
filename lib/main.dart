@@ -6,7 +6,9 @@ import 'package:flutter_basics/basics/CarouseSlider/carouselSlider.dart';
 import 'package:flutter_basics/basics/Design/splitting_appinto_widgets.dart';
 import 'package:flutter_basics/basics/Indicator/circularIndicator.dart';
 import 'package:flutter_basics/basics/POPUP_Dialog.dart';
+import 'package:flutter_basics/basics/URLLauncher.dart';
 import 'package:flutter_basics/basics/Widgets/timerClass_widget.dart';
+import 'package:flutter_basics/basics/bottomNavigationBar_widget.dart';
 import 'package:flutter_basics/basics/pageview_widget.dart';
 import 'package:flutter_basics/basics/wrap_widget.dart';
 
@@ -93,7 +95,7 @@ class HomePage extends StatelessWidget {
 //===================================================
 
         // body: CustomAppBar_Widget()
-        body: Center(child: CarouseSlider()) ,
+        body: Center(child: URLLauncher()) ,
         // Custom_Button(btnName: "Play", bgColor: Colors.amber, icon: Icon(Icons.play_arrow), )
 
       //     OutlinedButton(

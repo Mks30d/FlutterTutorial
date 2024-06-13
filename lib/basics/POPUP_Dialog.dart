@@ -64,3 +64,29 @@ class POPUP_Widget extends StatelessWidget {
     );
   }
 }
+
+
+// void showPOPUP_1() {
+//   showDialog(
+//     context: context,
+//     builder: (context) {
+//       return Dialog(
+//         insetPadding: EdgeInsets.all(0),
+//         backgroundColor: Colors.transparent,
+//         child: ConstrainedBox(
+//           constraints: BoxConstraints(
+//             maxHeight: double.infinity,
+//           ),
+//           child: Padding(
+//             padding: const EdgeInsets.all(8.0),
+//             child: Container(
+//               width: double.infinity,
+//               color: Colors.green,
+//               child: Text(eventDescription),
+//             ),
+//           ),
+//         ),
+//       );
+//     },
+//   );
+// }
