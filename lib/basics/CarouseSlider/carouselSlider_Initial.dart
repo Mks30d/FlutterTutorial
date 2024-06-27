@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter_basics/basics/CarouseSlider/carouselSlider_Image.dart';
+import 'package:flutter_basics/basics/CarouseSlider/carouselSlider_API.dart';
 
 
 class CarouseSlider extends StatefulWidget {

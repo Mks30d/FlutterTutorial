@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_basics/Routine/routine.dart';
 import 'package:flutter_basics/admin/adminDashboard.dart';
+import 'package:flutter_basics/admin/adminScreens/Routine.dart';
 import 'package:flutter_basics/admin/dashboard_1.dart';
 import 'package:flutter_basics/basics/CarouseSlider/carouselDesign.dart';
 import 'package:flutter_basics/basics/CarouseSlider/carouselSlider.dart';
 import 'package:flutter_basics/basics/Design/splitting_appinto_widgets.dart';
 import 'package:flutter_basics/basics/Indicator/circularIndicator.dart';
 import 'package:flutter_basics/basics/POPUP_Dialog.dart';
+import 'package:flutter_basics/basics/URLLauncher.dart';
 import 'package:flutter_basics/basics/Widgets/timerClass_widget.dart';
+import 'package:flutter_basics/basics/bottomNavigationBar_widget.dart';
 import 'package:flutter_basics/basics/pageview_widget.dart';
 import 'package:flutter_basics/basics/wrap_widget.dart';
 
@@ -93,7 +97,7 @@ class HomePage extends StatelessWidget {
 //===================================================
 
         // body: CustomAppBar_Widget()
-        body: Center(child: CarouseSlider()) ,
+        body: Center(child: Routine_Widget()) ,
         // Custom_Button(btnName: "Play", bgColor: Colors.amber, icon: Icon(Icons.play_arrow), )
 
       //     OutlinedButton(

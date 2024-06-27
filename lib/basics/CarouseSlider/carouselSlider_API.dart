@@ -4,9 +4,10 @@
 //   'https://unsplash.com/photos/woman-standing-on-hill-in-islet-uZVtAixV8c8',
 // ];
 
-
 List images = [
   // 'assets/images/flutter.png',
+  'assets/images/book.jpeg',
+  'assets/images/coding4.jpeg',
   'assets/images/coding.jpg',
   'assets/images/bg1.jpg',
   // 'assets/images/logo.png',
@@ -17,6 +18,15 @@ List images = [
   'assets/images/coding.jpg',
 ];
 
+// List images = [
+//   'assets/images/carousel/book.jpeg',
+//   'assets/images/carousel/coding.jpg',
+//   'assets/images/carousel/coding2.jpeg',
+//   'assets/images/carousel/coding4.jpeg',
+//   'assets/images/carousel/cricket.png',
+//   'assets/images/carousel/fall_culturalfestival.png',
+//   'assets/images/carousel/music.png',
+// ];
 
 List<String> eventTitle1 = [
   "Title 1",
@@ -39,13 +49,13 @@ List<String> eventDetails1 = [
 ];
 
 var eventDetails = [
-
   {
     "eventTitle": "Title 1",
     "eventDescription": "Event 1 ",
     "eventLocation": "Location1",
     "eventLink": "Link1",
     "eventDateAndTime": "Sat, 1 June | 1:00 am",
+    "eventImage": "assets/images/bg1.jpg",
   },
   {
     "eventTitle": "Title 2",
@@ -53,6 +63,7 @@ var eventDetails = [
     "eventLocation": "Location2",
     "eventLink": "Link2",
     "eventDateAndTime": "Sat, 2 June | 2:00 am",
+    "eventImage": "assets/images/coding4.jpeg",
   },
   {
     "eventTitle": "Title 3",
@@ -60,6 +71,7 @@ var eventDetails = [
     "eventLocation": "Location3",
     "eventLink": "Link3",
     "eventDateAndTime": "Sat, 3 June | 3:00 am",
+    "eventImage": "assets/images/coding2.jpeg",
   },
   {
     "eventTitle": "Title 4",
@@ -67,6 +79,7 @@ var eventDetails = [
     "eventLocation": "Location4",
     "eventLink": "Link4",
     "eventDateAndTime": "Sat, 4 June | 4:00 am",
+    "eventImage": "assets/images/cricket.png",
   },
   {
     "eventTitle": "Title 5",
@@ -74,6 +87,7 @@ var eventDetails = [
     "eventLocation": "Location5",
     "eventLink": "Link5",
     "eventDateAndTime": "Sat, 5 June | 5:00 am",
+    "eventImage": "assets/images/book.jpeg",
   },
   {
     "eventTitle": "Title 6",
@@ -81,6 +95,6 @@ var eventDetails = [
     "eventLocation": "Location6",
     "eventLink": "Link6",
     "eventDateAndTime": "Sat, 6 June | 6:00 am",
+    "eventImage": "assets/images/coding.jpg",
   },
-
 ];
