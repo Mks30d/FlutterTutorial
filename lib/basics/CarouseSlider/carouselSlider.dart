@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_basics/basics/CarouseSlider/carouselSlider_Image.dart';
+import 'package:flutter_basics/basics/CarouseSlider/carouselSlider_API.dart';
 
 class CarouseSlider extends StatefulWidget {
   const CarouseSlider({super.key});

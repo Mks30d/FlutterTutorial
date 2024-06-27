@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_basics/Routine/routine.dart';
 import 'package:flutter_basics/admin/adminDashboard.dart';
+import 'package:flutter_basics/admin/adminScreens/Routine.dart';
 import 'package:flutter_basics/admin/dashboard_1.dart';
 import 'package:flutter_basics/basics/CarouseSlider/carouselDesign.dart';
 import 'package:flutter_basics/basics/CarouseSlider/carouselSlider.dart';
@@ -95,7 +97,7 @@ class HomePage extends StatelessWidget {
 //===================================================
 
         // body: CustomAppBar_Widget()
-        body: Center(child: URLLauncher()) ,
+        body: Center(child: Routine_Widget()) ,
         // Custom_Button(btnName: "Play", bgColor: Colors.amber, icon: Icon(Icons.play_arrow), )
 
       //     OutlinedButton(
