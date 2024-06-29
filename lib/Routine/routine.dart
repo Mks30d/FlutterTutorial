@@ -44,8 +44,14 @@ class _Routine_WidgetState extends State<Routine_Widget> {
                   child: Container(
                     width: 80,
                     color: Colors.blueAccent,
-                    alignment: Alignment.center,
-                    child: Text("${DateFormat("dd").format(day)}\n${DateFormat("E").format(day)}"),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text("${DateFormat("dd").format(day)}"),
+                        Text("${DateFormat("E").format(day).toUpperCase()}"),
+                      ],
+                    ),
                   ),
                 );
               },
