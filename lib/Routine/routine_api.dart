@@ -30,7 +30,7 @@
 // };
 // ===============================================================
 var routineapi = {
-  "Monday": [
+  "monday": [
     {
       "subjectCode": "KCA201",
       "subjectName": "Theory of Automata & Formal Languages",
@@ -63,7 +63,7 @@ var routineapi = {
     },
   ],
 
-  "Tuesday": [
+  "tuesday": [
     {
       "subjectCode": "KCA205",
       "subjectName": "Data Structures & Analysis of Algorithms",
@@ -90,7 +90,7 @@ var routineapi = {
     },
   ],
 
-  "Wednesday": [
+  "wednesday": [
     {
       "subjectCode": "KCA204",
       "subjectName": "Database Management Systems",
@@ -123,7 +123,7 @@ var routineapi = {
     },
   ],
 
-  "Thursday": [
+  "thursday": [
     {
       "subjectCode": "KCA202",
       "subjectName": "Object Oriented Programming",
@@ -150,7 +150,7 @@ var routineapi = {
     },
   ],
 
-  "Friday": [
+  "friday": [
     {
       "subjectCode": "KCA201",
       "subjectName": "Theory of Automata & Formal Languages",
@@ -177,7 +177,7 @@ var routineapi = {
     },
   ],
 
-  "Saturday": [
+  "saturday": [
     {
       "subjectCode": "KCA201",
       "subjectName": "Theory of Automata & Formal Languages",
@@ -209,7 +209,32 @@ var routineapi = {
       "time": "1:00",
     },
   ],
-
+  "sunday": [
+    {
+      "subjectCode": "KCA205",
+      "subjectName": "Data Structures & Analysis of Algorithms",
+      "subjectTeacher": "Ms. Priyanka Gupta",
+      "time": "09:00",
+    },
+    {
+      "subjectCode": "KCA201",
+      "subjectName": "Theory of Automata & Formal Languages",
+      "subjectTeacher": "Ms. Janeet Kaur",
+      "time": "10:00",
+    },
+    {
+      "subjectCode": "KCAA01",
+      "subjectName": "Cyber Security",
+      "subjectTeacher": "Ms. Megha Gupta",
+      "time": "11:00",
+    },
+    {
+      "subjectCode": "KCA203",
+      "subjectName": "Operating Systems",
+      "subjectTeacher": "Ms. Abha Sharma",
+      "time": "12:00",
+    },
+  ],
 };
 
 var subjectDetails = [
