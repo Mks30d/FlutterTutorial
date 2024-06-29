@@ -9,6 +9,13 @@ class Date_Time extends StatefulWidget {
 }
 
 class _Date_TimeState extends State<Date_Time> {
+
+  Widget customDate() {
+    return Container(
+      height: 100,
+      color: Colors.orange,
+    );
+  }
   @override
   Widget build(BuildContext context) {
   var time = DateTime.now();
@@ -16,11 +23,14 @@ class _Date_TimeState extends State<Date_Time> {
     return Scaffold(
       body: Column(
         children: [
+          customDate(),
           Text("Time: ${time}", style: TextStyle(fontSize: 20),),
+
           Text("Date: ${time.day}-${time.month}-${time.year}"),
-          Text("Time: ${time.hour}:${time.minute}:${time.second}: ${time.millisecond}"),
+          Text("Time: ${time.hour}:${time.minute}:${time.second}: ${time.millisecond}\n"),
 
           Text("Time: ${DateFormat("Hms").format(time)}"),
+          Text("Time: ${DateFormat("EEEE").format(time)}"),
           Text("Time: ${DateFormat("jms").format(time)}"),
           Text("Time: ${DateFormat("yMMMd").format(time)}"),
 
