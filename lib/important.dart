@@ -13,6 +13,18 @@ class Important extends StatelessWidget {
     Color(0xff00c95d), //green
   ];
 
+
+List<String> days = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday"
+];
+
+
   var studentAttendance = [
     100, 66, 75, 98, 100, 66, 75, 98, 77, 66, 75, 98, 77
   ];

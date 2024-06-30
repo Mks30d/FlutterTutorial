@@ -2,16 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_basics/Routine/routine_api.dart';
 import 'package:intl/intl.dart';
 
-// List<String> days = [
-//   "Monday",
-//   "Tuesday",
-//   "Wednesday",
-//   "Thursday",
-//   "Friday",
-//   "Saturday",
-//   "Sunday"
-// ];
-
 DateTime dateTime = DateTime.now();
 
 // Selected day for routine display
@@ -26,9 +16,6 @@ class Routine_Widget extends StatefulWidget {
 }
 
 class _Routine_WidgetState extends State<Routine_Widget> {
-  // var subject = routineapi["Monday"]?[1]["subject"];
-  // var time = routineapi["Monday"]?[1]["time"];
-  // var room = routineapi["Monday"]?[1]["room"];
 
   // Generate a list of the next 5 days including the current date
   List<DateTime> nextDays = List.generate(7, (index) {
@@ -44,7 +31,7 @@ class _Routine_WidgetState extends State<Routine_Widget> {
         children: [
           // ================ Date and weekday ===================
           Container(
-            height: 100,
+            height: 80,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: nextDays.length,
@@ -61,16 +48,33 @@ class _Routine_WidgetState extends State<Routine_Widget> {
                     });
                   },
                   child: Container(
-                    width: 80,
-                    color: selectedDay == dayName
-                        ? Colors.blueAccent
-                        : Colors.white,
+                    width: 65,
+                    decoration: BoxDecoration(
+                        color: selectedDay == dayName
+                            ? Colors.blueAccent
+                            : Colors.white,
+                        borderRadius: BorderRadius.circular(15)),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text("${DateFormat("dd").format(day)}"),
-                        Text("${DateFormat("E").format(day).toUpperCase()}"),
+                        Text(
+                          "${DateFormat("dd").format(day)}",
+                          style: TextStyle(
+                              fontSize: 22,
+                              color: selectedDay == dayName
+                                  ? Colors.white
+                                  : Colors.black),
+                        ),
+                        Text(
+                          "${DateFormat("E").format(day).toUpperCase()}",
+                          style: TextStyle(
+                              fontSize: 15,
+                              // fontWeight: FontWeight.w600,
+                              color: selectedDay == dayName
+                                  ? Colors.white
+                                  : Colors.black),
+                        ),
                       ],
                     ),
                   ),
@@ -78,7 +82,6 @@ class _Routine_WidgetState extends State<Routine_Widget> {
               },
             ),
           ),
-
 
           //================ RoutineDetails ==================
           Expanded(
@@ -97,7 +100,6 @@ class _Routine_WidgetState extends State<Routine_Widget> {
                         fit: BoxFit.cover,
                       ),
                     )
-
                   : ListView.builder(
                       itemCount: routineapi[selectedDay]?.length,
                       itemBuilder: (context, index) {
@@ -114,7 +116,7 @@ class _Routine_WidgetState extends State<Routine_Widget> {
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(
-                                  left: 9, right: 9, top: 5, bottom: 4),
+                                  left: 9, right: 9, top: 9, bottom: 0),
                               child: Container(
                                 decoration: BoxDecoration(
                                   color: Colors.white,
@@ -143,65 +145,6 @@ class _Routine_WidgetState extends State<Routine_Widget> {
             ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-// ===================================================
-class RoutineDetails extends StatefulWidget {
-  const RoutineDetails({super.key});
-
-  @override
-  State<RoutineDetails> createState() => _RoutineDetailsState();
-}
-
-class _RoutineDetailsState extends State<RoutineDetails> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        // width: double.infinity,
-        // height: 200,
-        decoration: BoxDecoration(
-          color: Color(0xFFE5E5EC),
-        ),
-        child: ListView.builder(
-          itemCount: routineapi["monday"]?.length,
-          itemBuilder: (context, index) {
-            var subjectTime = routineapi["monday"]?[index]["time"];
-            var subjectCode = routineapi["monday"]?[index]["subjectCode"];
-            var subjectName = routineapi["monday"]?[index]["subjectName"];
-            var subjectTeacher = routineapi["monday"]?[index]["subjectTeacher"];
-
-            return Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(
-                      left: 9, right: 9, top: 5, bottom: 4),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(6),
-                    ),
-                    child: ListTile(
-                      leading: Text(
-                        subjectTime!,
-                        style: TextStyle(fontSize: 12),
-                      ),
-                      title: Text(
-                        "$subjectName ($subjectCode)",
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      subtitle: Text(subjectTeacher!,
-                          style: TextStyle(color: Color(0xFF5E5E5E))),
-                    ),
-                  ),
-                ),
-              ],
-            );
-          },
-        ),
       ),
     );
   }
